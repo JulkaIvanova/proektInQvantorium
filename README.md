@@ -1,1 +1,1 @@
-# proektInQvantoriuml
+# proektInQvantorium
