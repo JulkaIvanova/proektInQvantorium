@@ -40,9 +40,13 @@
 
         .logo {
             float: left;
+            display: flex;
+            flex-direction: row;
         }
 
         .logo img {
+            margin-top: 20px;
+            margin-left: 20px;
             display: block;
             border-radius: 10px;
             width: 80px;
@@ -60,25 +64,76 @@
         }
         .nav_li{
             text-decoration: none; 
-            color:white;
+            color:rgb(0, 0, 0);
+        }
+        .nav_li:hover{
+            color: rgb(85, 85, 85);
+        }
+        .clearfix{
+            background-color: white;
+        }
+        h1{
+            color: black;
+            font-family: "Amatic SC";
+            margin-top: 20px;
+            font-size: 350%;
+        }
+        .stat1{
+            color: white;
+            font-family: "Rubik Mono One";
+            font-size: 40px;
+            border: 4px dashed white;
+            margin-top: 5%; 
+            margin-left: 6%;
+            text-align: center;
+            width: 700px;
+        }
+        .stat2{
+            color: rgb(0, 0, 0);
+            font-family: "Amatic SC";
+            font-size: 75px;
+        }
+        h2{
+            font-size: 60px;
+            font-family: "Rubik Mono One";
+            color: rgb(0, 0, 0);
         }
     </style>
 </head>
 <body>
-    <header class="clearfix">
+    <header style="position: static;" class="clearfix">
         <div class="logo">
             <img src="q.jpg">
+            <b><h1>Кинолюб</h1></b>
         </div>
+        
         <nav>
-            <ul>
-                <li style="margin-top:20px; margin-right:100px"><a href="#" class="nav_li">О нас</a></li>
-                <li style="margin-top:20px; margin-right:100px"><a href="#" class="nav_li">О нашей компании</a></li>
-                <li style="margin-top:20px; margin-right:100px"><a href="#" class="nav_li">Разработчики</a></li>
-                <li style="margin-top:20px; margin-right:20px"><a href="#" class="nav_li">Владелец</a></li>
+            <ul class=".uul">
+                <!-- <li style="margin-top:40px; margin-right:500px"><h1>Кинолюб</h1></li> -->
+                <li style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">О нас</a></li>
+                <li style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">О нашей компании</a></li>
+                <li style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">Разработчики</a></li>
+                <li style="margin-top:40px; margin-right:20px"><a href="#" class="nav_li">Владелец</a></li>
             </ul>
         </nav>
     </header>
-    <main></main>
+    <main>
+        
+        <img style="opacity: 0.3; position: absolute;" src="p.webp">
+            <div style="position: absolute; width: 100%; display: flex; flex-direction: column;">
+                <p class="stat1"><br>Ищите способ<br> провести свой досуг?<br>Тогда вы<br> по адрессу!</p>
+                <img style="margin-left: 6%; margin-top: 70px;" src="bilet.png" width=700px>
+            </div>
+            <div style="background-color: white; display: block; float: right;border-radius: 20px; margin-top: 5%; margin-left: 55%; position: absolute;">
+                <h2>Причины прийти<br> к нам:</h2>
+                    <p class="stat2">Большие и комфортные кинозалы</p>
+                    <p class="stat2">Разнообразие в выборе фильмов</p>
+                    <p class="stat2">Шаговая доступность</p>
+                    <p class="stat2">Недорогие билеты</p>
+                    <p class="stat2">Простая и понятная система</p>
+            </div>
+            <p style="position: absolute; font-size: 100px; margin-top: 50%; font-family: Rubik Mono One; text-align: center; color: white;">Кинотеатр Кинолюб - ждём вас в гости!</p>
+    </main>
     <footer></footer>
 </body>
 </html>
