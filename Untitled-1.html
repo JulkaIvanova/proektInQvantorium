@@ -99,6 +99,20 @@
             color: rgb(0, 0, 0);
         }
     </style>
+    <script>
+        function a(){
+            alert("Самые честные работники")
+        }
+        function b(){
+            alert("Самая лучшая кинокомпания")
+        }
+        function c(){
+            alert("Самые клёвые ребята")
+        }
+        function d(){
+            alert("Самая важная шишка")
+        }
+    </script>
 </head>
 <body>
     <header style="position: static;" class="clearfix">
@@ -110,10 +124,10 @@
         <nav>
             <ul class=".uul">
                 <!-- <li style="margin-top:40px; margin-right:500px"><h1>Кинолюб</h1></li> -->
-                <li style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">О нас</a></li>
-                <li style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">О нашей компании</a></li>
-                <li style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">Разработчики</a></li>
-                <li style="margin-top:40px; margin-right:20px"><a href="#" class="nav_li">Владелец</a></li>
+                <li onclick="a()" style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">О нас</a></li>
+                <li onclick="b()" style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">О нашей компании</a></li>
+                <li onclick="c()" style="margin-top:40px; margin-right:100px"><a href="#" class="nav_li">Разработчики</a></li>
+                <li onclick="d()" style="margin-top:40px; margin-right:20px"><a href="#" class="nav_li">Владелец</a></li>
             </ul>
         </nav>
     </header>
@@ -134,6 +148,13 @@
             </div>
             <p style="position: absolute; font-size: 100px; margin-top: 50%; font-family: Rubik Mono One; text-align: center; color: white;">Кинотеатр Кинолюб - ждём вас в гости!</p>
     </main>
-    <footer></footer>
+    <footer>
+        <div style="display: flex; flex-direction: row; margin-top: 69%; margin-left: 2%;">
+            <a href="http://t.me/Kinobelet_bot"><img style="margin-bottom: 50%;" src="Logo.svg" width="50px"></a>
+            <p style="color: white; font-family: Rubik Mono One; margin-top: 1%; margin-left: 2%;">Чтобы забронировать место заходите в наш телеграмм</p>
+            <a href="https://github.com/JulkaIvanova/proektInQvantorium.git"><img style="margin-bottom: 50%; margin-left: 500%;" src="gitlogo.com" width="50px"></a>
+            <p style="color: white; font-family: Rubik Mono One; margin-top: 1%; margin-left: 15%;">Гитхаб нашего проекта</p>
+        </div>
+    </footer>
 </body>
 </html>
