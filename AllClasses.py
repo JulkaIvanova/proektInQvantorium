@@ -1,5 +1,6 @@
 import telebot
 import sqlite3
+import uuid
 
 minutes = ''
 houres = ''
@@ -156,10 +157,12 @@ class CinemaHall:
             seat = int(message.text)
 
         else:
+            uuid1 = uuid.uuid4()
             cursor.execute(f'''INSERT INTO 
-            users(id, row, place, time, film) 
-            VALUES({message.from_user.id}, {row}, {seat}, {houers}:{minutes}, {move})''')
+            users(id, row, place, time, film, namberOfOder) 
+            VALUES({message.from_user.id}, {row-1}, {seat-1}, {time}, {move}, {uuid1})''')
         self.bookedSeates.append((move, row - 1, seat - 1, time))
+        bot.send_message(chat_id=message.chat.id, text=f"Номер вашего заказа: {uuid1}")
 
     def cancelAllBooks(self) -> None:
         self.bookedSeates.clear()
@@ -363,9 +366,10 @@ class Cinema:
                     houers = int(i[2].split(":")[0])
                     string3 += (
                         f"Кинотеатр: {i[0].name}\nЗал: {i[1].name}\nВремя:{i[3]}-{houers + i[2].during // 60}:{minutes}")
-                    i[1].book(i[3], i[2].name)
-
                     bot.send_message(chat_id=message.chat.id, text=string3)
+                    i[0].book(message, bot, i[2], i[1].name)
+
+                    
 
 
 
@@ -387,7 +391,7 @@ class Cinema:
                 bot.send_message(chat_id=message.chat.id, text="Такого кинотеатра не сушествует😞. Введите название кинозала: ", reply_markup=keyboard4)
                 hallss = message.text
 
-            self.halls[hallss.index(hall)].book()
+            self.halls[hallss.index(hall)].book(message, bot)
 
 # def createCinema() -> Cinema:
 #     return Cinema(input("Введите название кинотеатра: "), [])
